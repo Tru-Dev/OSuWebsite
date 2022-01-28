@@ -1,0 +1,23 @@
+<nav id="navbar" class="flex flex-col w-auto fixed inset-x-0 top-0 lg:flex-row lg:static lg:max-w-screen-lg lg:mx-auto lg:px-1">
+    <button id="navbar-toggle" class="flex flex-row items-center justify-between w-full pt-2 px-8 bg-indigo-800 border-b-8 border-b-indigo-500 lg:hidden">
+        <h1 class="text-lg">OSu</h1>
+        <i data-feather="chevron-down"></i>
+    </button>
+    <div id="navbar-content" class="hidden text-lg bg-indigo-900 lg:bg-transparent px-2 py-1 flex-col lg:flex lg:flex-row lg:px-0">
+        <%= link "home", to: Routes.page_path(@conn, :index), class: "px-6 py-2 my-1 hover:bg-indigo-500 focus:bg-indigo-500 lg:px-0 lg:mx-3 lg:py-0 lg:my-0 lg:hover:bg-transparent lg:focus:bg-transparent lg:hover:text-indigo-300 lg:focus:text-indigo-300" %>
+        <%= link "about", to: Routes.page_path(@conn, :about), class: "px-6 py-2 my-1 hover:bg-indigo-500 focus:bg-indigo-500 lg:px-0 lg:mx-3 lg:py-0 lg:my-0 lg:hover:bg-transparent lg:focus:bg-transparent lg:hover:text-indigo-300 lg:focus:text-indigo-300" %>
+    </div>
+</nav>
+<main class="mx-auto container mt-12 lg:max-w-screen-lg lg:mt-0">
+    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    <%= @inner_content %>
+</main>
+<script>
+    $(function() {
+        $("#navbar-toggle").click(function(){
+            $("#navbar-toggle svg").toggleClass("-scale-y-100")
+            $("#navbar-content").toggleClass(["hidden", "flex"])
+        });
+    });
+</script>
