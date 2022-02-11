@@ -15,6 +15,13 @@
 </main>
 <script>
     $(function() {
+        $(document).click(function(event) {
+            $("#navbar-toggle svg").removeClass("-scale-y-100");
+            $("#navbar-content").removeClass("flex").addClass("hidden");
+        });
+        $("#navbar").click(function(event) {
+            event.stopPropagation();
+        });
         $("#navbar-toggle").click(function(){
             $("#navbar-toggle svg").toggleClass("-scale-y-100")
             $("#navbar-content").toggleClass(["hidden", "flex"])

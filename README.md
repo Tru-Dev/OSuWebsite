@@ -15,4 +15,4 @@ PostgreSQL database. Both will go in `.env` at the root of the repository (see
 (at repo root), while the secret key will go in a file called `secret.txt` as well.
 
 Once that is done, run `docker compose up`. It should work now, go to
-[localhost:4000](http://localhost:4000) to see the results.
+[localhost:4200](http://localhost:4200) to see the results.

@@ -11,7 +11,7 @@ services:
     env_file:
       - .env
     ports:
-      - "4000:4000"
+      - "4200:4000"
     volumes:
       - .:/app
   db:
@@ -22,8 +22,8 @@ services:
       POSTGRES_USER: simon
     env_file:
       - .env
-    ports:
-      - "5432:5432"
+    # ports:
+    #   - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 
